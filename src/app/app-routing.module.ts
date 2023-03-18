@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthLoggedinGuard } from "./auth/auth-loggedin.guard";
 import { AuthComponent } from "./auth/auth.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
@@ -18,7 +19,7 @@ const appRoutes: Routes = [
         {path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService]},
     ]},
     { path: 'shopping-list', component: ShoppingListComponent },
-    { path: 'auth', component: AuthComponent },
+    { path: 'auth', component: AuthComponent, canActivate: [AuthLoggedinGuard] },
 ]
 
 @NgModule({
