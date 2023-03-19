@@ -36,7 +36,7 @@ import { RecipesModule } from './recipes/recipes.module';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule  ,
-    RecipesModule                           
+    RecipesModule
   ],
   providers: [ShoppingListService, RecipeService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
